@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>简历</title>
+    <style>
+        body {
+            background-color: #EBECF1;
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .container {
+            width: 90%;
+            min-width: 768px;
+            max-width: 1080px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .sidebar {
+            box-sizing: border-box;
+            width: 30%;
+            background-color: #283848;
+            color: #fff;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+        }
+
+        .main {
+            width: 70%;
+            margin-left: 31%;
+        }
+
+        .sidebar .header {
+            background-color: #16222E;
+        }
+
+        .sidebar .header h1 {
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            margin: 0;
+        }
+
+        .sidebar .portrait {
+            background-color: #23313E;
+            height: 300px;
+            text-align: center;
+        }
+
+        .sidebar .portrait img {
+            margin-top: 50px;
+            width: 130px;
+        }
+
+        .sidebar .self-intro {
+            padding: 30px;
+        }
+
+        .sidebar .qrcode {
+            margin-top: 150px;
+            height: 120px;
+            width: 120px;
+
+        }
+
+        .main-header {
+            overflow: hidden;
+        }
+
+        .main-header .personal-details,
+        .main-header .contact-details {
+            color: #fff;
+            float: left;
+            width: 49%;
+            height: 230px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .main-header .personal-details {
+            background-color: #DF4E3D;
+        }
+
+        .main-header .contact-details {
+            background-color: #23B495;
+            margin-left: 2%;
+        }
+
+        .main .personal-details,
+        .main .contact-details,
+        .main .experience,
+        .main .education,
+        .main .honor {
+            position: relative;
+        }
+
+        .main .icon {
+            position: absolute;
+            width: 80px;
+            top: 20px;
+            right: 20px;
+        }
+
+        .main .experience,
+        .main .education {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #fff;
+            overflow: hidden;
+        }
+
+        .main .experience .title,
+        .main .education .title {
+            width: 30%;
+            float: left;
+        }
+
+        .main .experience .title h3,
+        .main .education .title h3 {
+            color:#398FCC;
+        }
+
+        .main .experience .title p,
+        .main .education .title p {
+            color:rgb(178, 178, 179);
+        }
+
+        .main .experience .detail,
+        .main .education .detail {
+            width: 70%;
+            float: left;
+        }
+
+        .main .experience .detail p,
+        .main .education .detail p {
+            color: gray;
+        }
+
+        .main .honor {
+            background-color: #398FCC;
+            color: #fff;
+            margin: 20px 0 0 0;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .main .honor ul {
+            box-sizing: border-box;
+            width: 50%;
+            float: left;
+            padding-left: 50px;
+            list-style: disc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="header">
+                <h1>个人简历</h1>
+            </div>
+            <div class="portrait">
+                <img src="headphoto.jpg" alt="portrait">
+                <h2>迟春红</h2>
+            </div>
+            <div class="self-intro">
+                <h2>自我介绍</h2>
+                <p>1993年10月15日出生于北京市怀柔区，中国内地男演员，毕业于首都师范大学音乐学院。2014年，因参演搜狐自制网剧《匆匆那年》，饰演男二号“乔燃”一角受到关注。</p>
+                <p>2015年7月，参演明晓溪同名小说改编电视剧《旋风少女》，在剧中饰演喻初原</p>
+                <p>2015年10月，参与的自然旅游纪实真人秀《跟着贝尔去冒险》播出。2016年，参与的明星推理综艺秀《明星大侦探》播出</p>
+                <p>4月22日，主演的青春电影《谁的青春不迷茫》上映 </p>
+                <img src="qrcode.jpg" class="qrcode" alt="arcode">
+                <ul class="contact">
+                    <li>
+                        <i></i> 手机：17853502159</li>
+                    <li>
+                        <i></i> 邮箱：1140915576@qq.com </li>
+                    <li>
+                        <i></i> QQ：1140915576 </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /siderbar -->
+        <div class="main">
+            <div class="main-header">
+                <div class="personal-details">
+                    <img src="photo1.jpg" class="icon">
+                    <h2>基本资料</h2>
+                    <ul>
+                        <li>出生年月：1996 年 11 月</li>
+                        <li>专业：信息管理与信息系统</li>
+                        <li>学位：本科</li>
+                        <li>英语： 4 级</li>
+                    </ul>
+                </div>
+                <div class="contact-details">
+                    <img src="photo2.jpg" class="icon">
+                    <h2>联系方式</h2>
+                    <ul class="contact">
+                        <li>
+                            <i></i> 手机：17853502159</li>
+                        <li>
+                            <i></i> 邮箱：1140915576@qq.com </li>
+                        <li>
+                            <i></i> QQ：1140915576 </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="experience">
+                <img src="photo3.jpg" class="icon">
+                <h2>演出经历</h2>
+                <div class="item">
+                    <div class="title">
+                        <h3>首部作品</h3>
+                        <p>2014年</p>
+                    </div>
+                    <div class="detail">
+                        <h3>匆匆那年</h3>
+                        <p>依然在校的白敬亭出演搜狐视频周播剧《匆匆那年》，在剧中饰演男二号乔燃</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="title">
+                        <h3>明星推理综艺秀</h3>
+                        <p>2016年4月</p>
+                    </div>
+                    <div class="detail">
+                        <h3>明星大侦探</h3>
+                        <p>参加明星推理综艺秀《明星大侦探》；4月22日，其主演的青春电影《谁的青春不迷茫》上映，并在片中饰演叛逆少年高翔</p>
+                    </div>
+                </div>
+            </div>
+            <div class="education">
+                <img src="photo4.jpg" class="icon">
+                <h2>获奖经历</h2>
+                <div class="item">
+                    <div class="title">
+                        <h3>最受欢迎角色</h3>
+                        <p>2016-12-15</p>
+                    </div>
+                    <div class="detail">
+                        <h3>第十三届</h3>
+                        <p>广州大学生电影节最受大学生欢迎角色——高翔（饰演者）</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="title">
+                        <h3>青年演员</h3>
+                        <p>2017-11-23</p>
+                    </div>
+                    <div class="detail">
+                        <h3>2017届</h3>
+                        <p>网易有态度人物盛典，年度最有态度青年演员（获奖）</p>
+                    </div>
+                </div>
+            </div>
+            <div class="honor">
+                <img src="photo5.jpg" class="icon">
+                <h2>获奖经历</h2>
+                <ul>
+                    <li>2010 年 优秀学生会干部</li>
+                    <li>2011 年 国家科技进步奖</li>
+                    <li>2010 年 优秀学生会干部</li>
+                    <li>2011 年 国家科技进步奖</li>
+                </ul>
+                <ul>
+                    <li>2010 年 优秀学生会干部</li>
+                    <li>2011 年 国家科技进步奖</li>
+                    <li>2010 年 优秀学生会干部</li>
+                    <li>2011 年 国家科技进步奖</li>
+                </ul>
+            </div>
+        </div>
+        <!-- /main -->
+    </div>
+    <!-- /container -->
+</body>
+
+</html>
