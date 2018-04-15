@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>top</title>
+    <style>
+            body {
+                background: lightgreen;
+                width: 90%;
+                height: 5000px;
+            }
+            #top {
+                position: fixed;
+                z-index: 5000;
+                right: 50px;
+                bottom: 50px;
+    
+                box-sizing: border-box;
+                width: 60px;
+                height: 60px;
+                background: rgba(255, 255, 255, .2);
+                border: 1px solid rgba(255, 255, 255, .6);
+    
+                text-align: center;
+                padding-top: 25px;
+                color: #fff;
+                text-transform: uppercase;
+    
+                cursor: pointer;
+    
+                opacity: 0;
+                transition: all 1s;
+            }
+    
+            #top.show {
+                opacity: 1;
+            }
+    
+            #top::after {
+                content: '';
+                width: 0;
+                height: 0;
+    
+                border-width: 8px;
+                border-style: solid;
+                border-color: transparent transparent #fff transparent;
+    
+                position: absolute;
+                top: 5px;
+                left: 50%;
+                margin-left: -8px;
+            }
+        </style>
+</head>
+
+<body>
+        <div id="top">Top</div>
+        <script>
+                // 返回顶部
+                var nav = document.getElementById("top");
+        
+                nav.addEventListener('click', function () {
+                    window.scrollTo(0, 0);
+                });
+        
+                window.onscroll = function () {
+                    var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;;
+                    if (scrollTop > 200) {
+                        /*
+                        如果滚动条距离上面 大于200，显示，否则，不显示、
+                        */
+                        nav.className = 'show';
+                    } else {
+                        nav.className = '';
+                    }
+                };
+            </script>
+</body>
+
+</html>

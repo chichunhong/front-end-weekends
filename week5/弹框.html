@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>弹出框</title>
+
+    <style>
+        .content {
+            background-color: lightblue;
+            margin: 20px;
+            padding: 20px;
+            text-align: center;
+            width: 90%;
+        }
+
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            visibility: hidden;
+            opacity: 0;
+
+            transition: all .5s;
+        }
+
+        .popup.show {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .popup-content {
+            position: absolute;
+            z-index: 200;
+
+            width: 500px;
+            height: 200px;
+            box-sizing: border-box;
+
+            left: 50%;
+            top: 50%;
+            margin-left: -250px;
+            margin-top: -100px;
+            padding: 30px 50px;
+
+            background: #fff;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, .2);
+            text-align: center;
+
+            overflow: auto;
+        }
+
+        .popup-content h2 {
+            color: #555;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .popup-content p {
+            color: #888;
+            font-size: 21px;
+        }
+
+        .popup-content button {
+            color: #fff;
+            background: #7989e4c2;
+            border-radius: 4px;
+            border: 0;
+            font-size: 21px;
+            padding: 10px 50px;
+        }
+
+        .popup-content button:hover {
+            background: #4f71e0;
+        }
+
+        .popup-bg {
+            position: absolute;
+            z-index: 100;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .3);
+        }
+
+    </style>
+    <script src="../lib/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+    <div class="content">
+        <p>假如生活
+            <a href="#" class="link-popup">欺骗</a>了你，</p>
+        <p>不要悲伤，不要心急！</p>
+        <p>忧郁的日子里须要镇静：</p>
+        <p>相信吧，快乐的日子将会来临！</p>
+        <p>心儿永远向往着未来；</p>
+        <p>现在却常是忧郁。</p>
+        <p>一切都是瞬息，一切都将会过去；</p>
+        <p>而那过去了的，就会成为亲切的怀恋。</p>
+    </div>
+    <div class="popup">
+        <div class="popup-content">
+            <h2>确定提交？</h2>
+            <button class="popup-submit">提交</button>
+            <button class="popup-close">关闭弹窗</button>
+        </div>
+        <div class="popup-bg"></div>
+    </div>
+    <script>
+        // 弹出框
+        $(document).ready(function () {
+            $('a.link-popup, .popup-submit,.popup-close, .popup-bg').on('click', function (e) {
+                e.preventDefault();
+                $('.popup').toggleClass('show');
+            });
+        });
+    </script>
+    <script src="../lib/jquery-3.2.1.min.js"></script>
+</body>
+</html>

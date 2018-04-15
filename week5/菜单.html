@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>menu1</title>
+    <style>
+        body {
+            background-color: lightgreen;
+        }
+/* 一级菜单 */
+        .menu {
+            background: #27ae60;
+            height: 65px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu li {
+            list-style: none;
+            display: block;
+            float: left;
+            border-right: 1px solid rgba(255, 255, 255, .3);
+            position: relative;
+        }
+
+        .menu li a {
+            display: block;
+            /* block:块级元素，前后带换行符;inline-block:行内块元素 */
+            padding: 0 35px;
+            line-height: 65px;
+            font-size: 21px;
+            color: #fff;
+            text-decoration: none;
+            /*定义添加到文本的修饰，默认值，标准的文本*/
+        }
+/* 二级菜单 */
+        .menu li ul {
+            display: none;
+            /* 定义建立布局时元素生成的显示框类型/规定元素应该生成的框的类型。none:元素不被显示； */
+            position: absolute;
+            top: 65px;
+            background: #2ecc71;
+        }
+
+        .menu li:hover ul {
+            /* hover:设置鼠标停在元素上时的样式 */
+            display: block;
+        }
+
+        .menu li ul li {
+            width: 100%;
+            border-right: 0;
+            /* ????设置二级菜单右侧为0px，消除白线 */
+            border-top: 1px solid rgba(255, 255, 255, .3);
+        }
+
+        .menu li ul li a {
+            font-size: 14px;
+            line-height: 50px;
+        }
+
+        .menu li:hover {
+            background: rgba(0,0,0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <ul class="menu">
+            <li>
+                <a href="">主页</a>
+            </li>
+            <li>
+                <a href="">新闻</a>
+                <ul>
+                    <li>
+                        <a href="">体育</a>
+                    </li>
+                    <li>
+                        <a href="">天气</a>
+                    </li>
+                    <li>
+                        <a href="">金融</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="">产品</a>
+                <ul>
+                    <li>
+                        <a href="">机器</a>
+                    </li>
+                    <li>
+                        <a href="">压缩机</a>
+                    </li>
+                    <li>
+                        <a href="">车辆</a>
+                    </li>
+                    <li>
+                        <a href="">建筑</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="">服务</a>
+            </li>
+            <li>
+                <a href="">联系我们</a>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>布局</title>
+    <style>
+        .nav {
+            margin:10px auto;
+            height: 40px;
+            width: 90%;
+            list-style: none;
+            background-color: lightblue;
+        }
+
+        .nav ul {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .nav li {
+            line-height: 40px;
+            display: inline-block;
+            margin-left: 30px;
+        }
+
+        .nav a:link,
+        .nav a:visited {
+            display: block;
+            width: 80px;
+            text-decoration: none;
+            color: #222;
+            text-align: center;
+        }
+
+        .nav a:hover,
+        .nav a:active {
+            color: blue;
+            background-color: white;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            overflow: hidden;
+            background-color: darkgray;
+
+            padding-right: 210px;
+            box-sizing: border-box;
+            position:relative;
+        }
+
+        .left {
+            background-color: bisque;
+            float: left;
+            width: 100%;
+        }
+
+        .right {
+
+            width: 200px;
+            background-color: rgb(203, 220, 235);
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nav">
+        <li>
+            <a href="#">首页</a>
+        </li>
+        <li>
+            <a href="#">啦啦</a>
+        </li>
+        <li>
+            <a href="#">哈哈</a>
+        </li>
+        <li>
+            <a href="#">嘿嘿</a>
+        </li>
+        <li>
+            <a href="#">呼呼</a>
+        </li>
+        <li>
+            <a href="#">呦呦</a>
+        </li>
+    </ul>
+    <div class="container">
+        <div class="left">
+            <p>grtgegeg  fefefef efefe mkge iowg mrgi ewog</p>
+        </div>
+        <div class="right">
+            <p>adffe</p>
+        </div>
+    </div>
+
+</body>
+
+</html>
