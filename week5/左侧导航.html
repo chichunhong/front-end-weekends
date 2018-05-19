@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>垂直导航菜单</title>
+    <!-- 一、垂直导航菜单的制作 
+1、基本的样式清除： *{margin:0;padding:0} 
+2、无序列表圆点去除： ul{list-style:none} 
+3、下划线去除： a{text-decoration:none} 
+4、文本缩进标签 text-indent 不会影响总体宽度（padding会） 
+5、使用行高line-height可以实现文字默认居中，前提是行高和width相等。 
+6、需要将a标签设置为块元素，才能设高宽、hover效果 代码：a{display:block}hover格式 a:hover{}//通过a：hover，可以为菜单增加交互效果。  -->
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+        }
+
+        a {
+            color: #333;
+            text-decoration: none
+        }
+
+        .nav li a {
+            display: block;
+            text-indent: 20px;
+            height: 30px;
+            line-height: 30px;
+            width: 120px;
+            background-color: #efefef;
+            margin-bottom: 1px;
+        }
+
+        .nav li a:hover {
+            background-color: #F60;
+            color: #fff
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nav">
+        <li>
+            <a href="#">首　　页</a>
+        </li>
+        <li>
+            <a href="#">关于我们</a>
+        </li>
+        <li>
+            <a href="#">产品展示</a>
+        </li>
+        <li>
+            <a href="#">售后服务</a>
+        </li>
+        <li>
+            <a href="#">联系我们</a>
+        </li>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>tab2</title>
+    <style>
+        .tab-container {
+            /* background: rgb(236, 210, 210);   */
+            overflow: hidden;  
+            width: 90%;
+        }
+
+        .tab-nav{
+            display: block;
+            background: rgb(48, 211, 157);  
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            width: 200px;
+            height: 300px;
+            position: absolute;
+            line-height: 40px;
+        }
+      
+        .tab-content{
+            display: block;
+            background-color: bisque;
+            margin: 0;
+            padding: 0;
+            width: 70%;
+            height: 300px;
+            padding:20px;
+            float: right;
+            
+        }
+         .tab-nav li a{
+            display: block;
+            text-decoration: none;
+            font-size: 20px;
+            color: rgb(117, 76, 76);
+        }
+
+        .tab-nav li a.active {
+            color: #1abc9c;
+            background: rgb(80, 177, 156);
+        }
+    </style>
+    <script></script>
+</head>
+
+<body>
+    <div class="tab-container">
+        <ul class="tab-nav">
+            <li><a href="#content-1" id="nav-1">1</a></li>
+            <li><a href="#content-2" id="nav-2">2</a></li>
+            <li><a href="#content-3" id="nav-3">3</a></li>
+        </ul>
+        <div class="tab-content" id="content-1">
+            <h2>面朝大海春暖花开--1</h2>
+            <div class="content">
+                从明天起，做一个幸福的人 喂马，劈柴，周游世界 从明天起，关心粮食和蔬菜 我有一所房子，面朝大海，春暖花开
+            </div>
+        </div>
+        <div class="tab-content" id="content-2">
+            <h2>面朝大海春暖花开--2</h2>
+            <div class="content">
+                从明天起，和每一个亲人通信 告诉他们我的幸福 那幸福的闪电告诉我的 我将告诉每一个人
+            </div>
+        </div>
+        <div class="tab-content" id="content-3">
+            <h2>面朝大海春暖花开--3</h2>
+            <div  class="content">
+                给每一条河每一座山取一个温暖的名字 陌生人，我也为你祝福 愿你有一个灿烂的前程 愿你有情人终成眷属 愿你在尘世获的幸福 我也愿面朝大海，春暖花开
+            </div>
+        </div>
+    </div>
+    <script>
+            // 标签页
+            //立即函数
+            (function () {
+                var nav_1 = document.getElementById('nav-1');
+                var nav_2 = document.getElementById('nav-2');
+                var nav_3 = document.getElementById('nav-3');
+    
+                var content_1 = document.getElementById('content-1');
+                var content_2 = document.getElementById('content-2');
+                var content_3 = document.getElementById('content-3');
+    
+                content_2.style.display = content_3.style.display = 'none';
+                nav_1.className = 'active';
+    
+                function hideAll() {
+                    nav_1.className = nav_2.className = nav_3.className = 'none';
+                    content_1.style.display = content_2.style.display = content_3.style.display = 'none';
+                }
+    
+                function show1() {
+                    hideAll();
+                    nav_1.className = 'active';
+                    content_1.style.display = 'block';
+                }
+    
+                function show2() {
+                    hideAll();
+                    nav_2.className = 'active';
+                    content_2.style.display = 'block';
+                }
+    
+                function show3() {
+                    hideAll();
+                    nav_3.className = 'active';
+                    content_3.style.display = 'block';
+                }
+
+                nav_1.addEventListener('click', show1);
+                nav_2.addEventListener('click', show2);
+                nav_3.addEventListener('click', show3);
+           
+                show1();
+            })();
+    
+        </script> 
+</body>
+
+</html>

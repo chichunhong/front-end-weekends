@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>100offer</title>
+    <link href="../lib/bootstrap-3.3.7/css/bootstrap.mycss.css" rel="stylesheet">
+    <link rel="icon" href="../images/week8/icon.jpg" type="img/x-ico" />
+    <script src="../lib/jquery.min.js"></script>
+    <script src="../lib/bootstrap-3.3.7/js/bootstrap.js"></script>
+    <style>
+        /* 导航 */
+
+        body {
+            background-color: blanchedalmond;
+            padding: 0;
+            margin: 0;
+        }
+
+        .navbar {
+            z-index: 100;
+            position: fixed;
+            width: 100%;
+            opacity: 0.8;
+        }
+
+        .navbar-header img {
+            position: absolute;
+            margin-top: 14px;
+            width: 108px;
+            height: 21px;
+        }
+
+        .nav {
+            position: relative;
+            left: 38%;
+
+        }
+
+        .nav .nav-item {
+            margin-left: 5px;
+            margin-right: 5px;
+            position: relative;
+
+        }
+
+        .nav .nav-item a {
+            display: block;
+            font-size: 14px;
+            font-family: "PingFangSC-Medium", sans-serif;
+        }
+
+        .nav .nav-item span {
+            font-size: 5px;
+        }
+
+        .nav .nav-item .menu-list {
+            display: none;
+            list-style: none;
+            position: absolute;
+            background-color: #fff;
+            top: 54px;
+            padding: 0;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border: #d0d1d3 solid 1px;
+            border-radius: 4px;
+        }
+
+        .nav .nav-item:hover .menu-list {
+            display: block;
+        }
+
+        .nav .nav-item .menu-list li {
+            width: 100%;
+            margin: 0;
+            height: 35px;
+            width: 150px;
+        }
+
+        .nav .nav-item .menu-list li a {
+            color: #000;
+            text-decoration: none;
+            padding-left: 20px;
+            line-height: 35px;
+        }
+
+        .nav .nav-item .menu-list li:hover {
+            background-color: #5d6472;
+            cursor: pointer;
+
+        }
+
+        .nav .nav-item .menu-list li:hover a {
+            color: #fff;
+        }
+
+        .navbar-form {
+            margin-right: 50px;
+
+        }
+
+        @media only screen and (max-width: 800px) {
+            .navbar-form {
+                margin-right: 0px;
+            }
+        }
+
+        @media only screen and (min-width: 1000px) {
+            .navbar .container-fluid .navbar-header img {
+                margin-left: 69px;
+            }
+        }
+
+        @media only screen and (min-width:768px) {
+            .banner-container .join-now-container .join-email {
+                width: 258px;
+            }
+            .banner-container .join-now-container .join-btn {
+                width: 280px;
+            }
+            .container {
+                width: 750px;
+            }
+            .features-container .hint {
+                width: 520px;
+            }
+            .home-text {
+                font-family: "ProductSans", "PingFangSC-Medium", sans-serif;
+                font-size: 18px;
+                color: #5d6472;
+            }
+            .home-title {
+                font-family: "ProductSans", "PingFangSC-Medium", sans-serif;
+                font-size: 28px;
+                color: #2F3239;
+            }
+            .home-text {
+                font-family: "ProductSans", "PingFangSC-Medium", sans-serif;
+                font-size: 18px;
+                color: #5d6472;
+            }
+        }
+
+        .navbar-form .btn {
+            width: 70px;
+            margin-right: 5px;
+            transition: all .3s linear;
+        }
+
+        /* main-container */
+
+        .main-container {
+            width: 100%;
+            height: 5102px;
+        }
+
+        /* banner-container */
+
+        .banner-container {
+            background-image: url(../images/week8/banner.jpg);
+            width: 100%;
+            height: 626px;
+            background-size: cover;
+        }
+
+        .join-now-container {
+            display: inline-block;
+            vertical-align: middle;
+            margin-top: 110px;
+            width: 500px;
+        }
+
+        .banner-title {
+            font-size: 50px;
+            line-height: 70px;
+            font-family: "ProductSans Bold", "PingFangSC-Medium", sans-serif;
+        }
+
+        .blue-spliter {
+            height: 5px;
+            width: 50px;
+            background-color: #17b1f7;
+            margin: 20px 0px;
+        }
+
+        .banner-subtitle {
+            font-family: "ProductSans", "PingFangSC-Medium", sans-serif;
+            font-size: 24px;
+        }
+
+        .join-email {
+            box-sizing: content-box;
+            height: 20px;
+            padding: 10px;
+            border: 1px solid #c3ccd9;
+            border-radius: 4px;
+            color: #434855;
+            transition: all 0.3s ease 0s;
+            -webkit-transition: all 0.3s ease 0s;
+        }
+
+        .join-btn {
+            height: 50px;
+            background-image: linear-gradient(-180deg, #4ec4f9 0%, #17b1f7 100%);
+            box-shadow: 0 12px 24px 0 rgba(23, 177, 247, 0.3);
+            border-radius: 4px;
+            color: #fff;
+            border: none;
+            transition: all 0.3s ease 0s;
+            -webkit-transition: all 0.3s ease 0s;
+        }
+
+        .mt20 {
+            margin-top: 20px;
+        }
+
+        /* features-container */
+
+        .features-container {
+            background-image: url(../images/week8/ribbon-up.jpg);
+            width: 100%;
+            height: 661px;
+            background-size: cover;
+        }
+
+        .features-container .resume-container {
+            display: inline-block;
+            vertical-align: middle;
+            margin-top: 110px;
+        }
+
+        @media only screen and (min-width:1100px) {
+            .container {
+                width: 1080px;
+            }
+        }
+
+        /* map-container */
+
+        .map-container {
+            background-image: url(../images/week8/ribbon-down.jpg);
+            width: 100%;
+            height: 630px;
+            background-size: cover;
+            z-index: -1;
+        }
+
+        .container .world-map {
+            position: absolute;
+            top: 1320px;
+            background-image: url(../images/week8/map.jpg);
+            left: 0;
+            right: 0;
+            width: 1000px;
+            height: 500px;
+            margin: 0 auto;
+            background-size: cover;
+            z-index: 0;
+        }
+
+        .map-container .container .map {
+            margin-top: 110px;
+        }
+
+        .map-container .container .city-names {
+            border-top: #9097a5 solid 1px;
+        }
+
+        .map-container .container .city-names .city {
+            margin-top: 10px;
+        }
+
+
+        .map-container .container .partner-list {
+            border-top: #9097a5 solid 1px;
+            margin-top: 40px;
+            padding-top: 20px;
+            left: 0;
+            right: 0;
+        }
+
+        .map-container .container .partner-list .partner-logo img {
+            width: 179px;
+            max-height: 64px;
+        }
+
+        .all-corp {
+            margin-top: 40px;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .all-corp a {
+            text-decoration: none;
+            color: #17B1F7;
+        }
+
+        .all-corp a:honer {
+            color: #17B1F7;
+        }
+
+        .all-corp i {
+            font-size: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 导航 -->
+    <nav class="navbar  navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img src="../images/week8/logo.svg" alt="">
+            </div>
+
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item">
+                        <a href="#">看机会
+                            <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+                        </a>
+                        <ul class="menu-list">
+                            <li>
+                                <a href="#">首页</a>
+                            </li>
+                            <li>
+                                <a href="#">使用攻略</a>
+                            </li>
+                            <li>
+                                <a href="#">常见问题</a>
+                            </li>
+                            <li>
+                                <a href="#">邀请朋友</a>
+                            </li>
+                            <li>
+                                <a href="#">移动版</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">招人才
+                            <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+                        </a>
+                        <ul class="menu-list">
+                            <li>
+                                <a href="#">首页</a>
+                            </li>
+                            <li>
+                                <a href="#">使用攻略</a>
+                            </li>
+                            <li>
+                                <a href="#">常见问题</a>
+                            </li>
+                            <li>
+                                <a href="#">移动版</a>
+                            </li>
+                        </ul>
+
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">博客
+                            <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+                        </a>
+                        <ul class="menu-list">
+                            <li>
+                                <a href="#">文章</a>
+                            </li>
+                            <li>
+                                <a href="#">活动</a>
+                            </li>
+                        </ul>
+
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-right">
+                    <button type="submit" class="btn btn-default">登录</button>
+                    <button type="submit" class="btn btn-info">注册</button>
+                </form>
+
+            </div>
+        </div>
+    </nav>
+    <div class="main-container">·
+        <!-- banner-container -->
+        <div class="banner-container">
+            <div class="container">
+                <div class="join-now-container">
+                    <div class="banner-title">让最好的人才
+                        <br/>遇见更好的机会</div>
+                    <div class="blue-spliter"></div>
+                    <div class="banner-subtitle">遇见互联网技术、产品、设计、数据等职位的优质机会</div>
+                    <div class="banner-input-container mt20">
+                        <input class="join-email" id="email" name="email" placeholder="Email" type="text" />
+                        <button class="join-btn mt20" id="index_join" type="submit">立即加入</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="features-container">
+            <div class="container">
+                <div class="resume-container">
+                    <div class="banner-title">一份简历，让企业来「抢」你</div>
+                    <div class="home-text hint mt20">在这里，你可以向数百家互联网企业匿名展示简历和职业期望，让对您感兴趣的企业主动邀请你参加面试。
+                        <span>
+                            <a href="/how-it-works" target="_blank">详细了解</a>
+                        </span>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="half">
+                                <div class="blue-spliter"></div>
+                                <div class="home-title">更多机会</div>
+                                <div class="home-text">短时间接触大量优质企业，在一到两周内收获5~10个面试邀请，不错过任何一个潜在的好机会。</div>
+                                <div class="mt20"></div>
+                                <div class="blue-spliter"></div>
+                                <div class="home-title">省时省力</div>
+                                <div class="home-text">优秀的人才永远供不应求。告别费时费力的简历投递，试试让企业来邀请你吧！</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="half">
+                                <div class="blue-spliter"></div>
+                                <div class="home-title">保证隐私</div>
+                                <div class="home-text">简历以匿名的方式呈现给企业，远离骚扰。你还可以指定企业，不让他们看到你的匿名简历，避免求职状态被雇主获悉的尴尬。</div>
+                                <div class="mt20"></div>
+                                <div class="blue-spliter"></div>
+                                <div class="home-title">专业服务</div>
+                                <div class="home-text">专业顾问提供面试辅导、offer比较、谈判等服务。入职后，你还会收到我们为你特别准备的礼包和亚马逊礼品卡。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="map-container">
+            <div class="container">
+                <img class="world-map" src="../images/week8/map.png" alt="map">
+                <div class="map">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="country-name home-title">中国</div>
+                            <div class="city-names">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="city home-text">北京</div>
+                                        <div class="city home-text">广州</div>
+                                        <div class="city home-text">杭州</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="city home-text">上海</div>
+                                        <div class="city home-text">深圳</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="country-name home-title">美国</div>
+                                    <div class="city-names">
+                                        <div class="city home-text">旧金山湾区</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="country-name home-title">新加坡</div>
+                                    <div class="city-names">
+                                        <div class="city home-text">新加坡</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="country-name home-title">澳大利亚</div>
+                                    <div class="city-names">
+                                        <div class="city home-text">悉尼</div>
+                                        <div class="city home-text">墨尔本</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="partner-list">
+                        <div class="partner-logo">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <a href="#">
+                                        <img src="../images/week8/alibaba.svg" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-md-2">
+                                    <a href="#">
+                                        <img src="../images/week8/mayi.svg" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-md-2">
+                                    <a href="#">
+                                        <img src="../images/week8/meituan.svg" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-md-2">
+                                    <a href="#">
+                                        <img src="../images/week8/wangyi.svg" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-md-2">
+                                    <a href="#">
+                                        <img src="../images/week8/58.svg" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-md-2">
+                                    <a href="#">
+                                        <img src="../images/week8/zhihu.svg" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="partner-logo">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <a href="#">
+                                        <img src="../images/week8/groupon.svg" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-md-2">
+                                    <a href="#">
+                                        <img src="../images/week8/y_media_labs.svg" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-md-2">
+                                    <a href="#"></a>
+                                    <img src="../images/week8/euclid.svg" alt="">
+                                </div>
+                                <div class="col-md-2">
+                                    <a href="#">
+                                        <img src="../images/week8/insightly.svg" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-md-2">
+                                    <a href="#">
+                                        <img src="../images/week8/share_this.svg" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-md-2">
+                                    <a href="#">
+                                        <img src="../images/week8/womply.svg" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="partner-logo">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <a href="#">
+                                        <img src="../images/week8/garena.svg" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-md-2">
+                                    <a href="#"></a>
+                                    <img src="../images/week8/grab.svg" alt="">
+                                </div>
+                                <div class="col-md-2">
+                                    <a href="#">
+                                        <img src="../images/week8/visenze.svg" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-md-2">
+                                    <a href="#">
+                                        <img src="../images/week8/thoughtworks.svg" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-md-2">
+                                    <a href="#">
+                                        <img src="../images/week8/zendesk.svg" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-md-2">
+                                    <a href="#">
+                                        <img src="../images/week8/acronis.svg" alt="">
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="all-corp home-text">
+                        <a href="/teams" target="_blank">查看全部企业
+                            <i class='glyphicon glyphicon-menu-right'></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="positions-container">
+            <div class="container">
+                <div class="banner-title">众多机会，「挑」出你满意的那个</div>
+                <div class="home-text mt20">在这里，你也可以挑选职位，主动出击，把主动权掌握在自己手中。
+                    <br />数百家求贤若渴的优质互联网公司正等着你的加入。</div>
+                <div class="selector-container">
+                    <div class="selector active" data-position="developer">技术</div>
+                    <div class="selector" data-position="data">数据</div>
+                    <div class="selector" data-position="pm">产品</div>
+                    <div class="selector" data-position="designer">设计</div>
+                </div>
+                <div class="positions developer-positions">
+                    <div class="position-block">
+                        <div class="position-info">
+                            <div class="home-text job-post">Python 后端工程师</div>
+                        </div>
+                        <div class="extra-info">
+                            <div class="home-text-2">北京</div>
+                            <div class="home-text mt5">¥20~30k × 13月</div>
+                        </div>
+                        <a href="/companies/62242260" target="_blank">
+                            <div class="company-logo">
+                                <div class="benchmark"></div>
+                                <img alt="22153 2018 05 14 isq1bm2gxmi63iuy 120x120" src="//offer-cp-logo.b0.upaiyun.com/p/logo/22153_2018_05_14_isq1bm2gxmi63iuy-120x120"
+                                />
+                            </div>
+                        </a>
+                    </div>
+                    <div class="position-block">
+                        <div class="position-info">
+                            <div class="home-text job-post">高级前端开发工程师</div>
+                        </div>
+                        <div class="extra-info">
+                            <div class="home-text-2">北京</div>
+                            <div class="home-text mt5">¥17~25k × 12月</div>
+                        </div>
+                        <a href="/companies/62860420" target="_blank">
+                            <div class="company-logo">
+                                <div class="benchmark"></div>
+                                <img alt="38d6fce9a40a4a5d812ca6bf4e17051e1525695701 120x120" src="//offer-cp-logo.b0.upaiyun.com/p/logo/38d6fce9a40a4a5d812ca6bf4e17051e1525695701-120x120"
+                                />
+                            </div>
+                        </a>
+                    </div>
+                    <div class="position-block">
+                        <div class="position-info">
+                            <div class="home-text job-post">高级前端开发工程师</div>
+                        </div>
+                        <div class="extra-info">
+                            <div class="home-text-2">北京</div>
+                            <div class="home-text mt5">¥20~40k × 14月</div>
+                        </div>
+                        <a href="/companies/31629511" target="_blank">
+                            <div class="company-logo">
+                                <div class="benchmark"></div>
+                                <img alt="4792 2015 03 20 14 57 53 120x120" src="//offer-cp-logo.b0.upaiyun.com/p/logo/4792_2015_03_20_14_57_53-120x120"
+                                />
+                            </div>
+                        </a>
+                    </div>
+                    <div class="position-block">
+                        <div class="position-info">
+                            <div class="home-text job-post">前端工程师</div>
+                        </div>
+                        <div class="extra-info">
+                            <div class="home-text-2">北京</div>
+                            <div class="home-text mt5">¥15~30k × 12月</div>
+                        </div>
+                        <a href="/companies/18328620" target="_blank">
+                            <div class="company-logo">
+                                <div class="benchmark"></div>
+                                <img alt="6dc6a1c6febf4a9bba7e3b429b73f4e41525336452 120x120" src="//offer-cp-logo.b0.upaiyun.com/p/logo/6dc6a1c6febf4a9bba7e3b429b73f4e41525336452-120x120"
+                                />
+                            </div>
+                        </a>
+                    </div>
+                    <div class="position-block">
+                        <div class="position-info">
+                            <div class="home-text job-post">视觉算法工程师</div>
+                        </div>
+                        <div class="extra-info">
+                            <div class="home-text-2">深圳</div>
+                            <div class="home-text mt5">¥20~40k × 14月</div>
+                        </div>
+                        <a href="/companies/31522535" target="_blank">
+                            <div class="company-logo">
+                                <div class="benchmark"></div>
+                                <img alt="22085 2018 05 03 qyywpb6vzq3ajttg 120x120" src="//offer-cp-logo.b0.upaiyun.com/p/logo/22085_2018_05_03_qyywpb6vzq3ajttg-120x120"
+                                />
+                            </div>
+                        </a>
+                    </div>
+                    <div class="position-block">
+                        <div class="position-info">
+                            <div class="home-text job-post">web前端开发</div>
+                        </div>
+                        <div class="extra-info">
+                            <div class="home-text-2">上海</div>
+                            <div class="home-text mt5">¥15~20k × 13月</div>
+                        </div>
+                        <a href="/companies/98726375" target="_blank">
+                            <div class="company-logo">
+                                <div class="benchmark"></div>
+                                <img alt="16562 2017 08 14 xgz1z9ma9cau7nxl 120x120" src="//offer-cp-logo.b0.upaiyun.com/p/logo/16562_2017_08_14_xgz1z9ma9cau7nxl-120x120"
+                                />
+                            </div>
+                        </a>
+                    </div>
+                    <div class="more-story home-text">
+                        <a href="/job_positions" target="_blank">注册后查看更多技术类职位
+                            <i class='flaticon flaticon-right'></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="positions data-positions hidden">
+                    <div class="position-block">
+                        <div class="position-info">
+                            <div class="home-text job-post">Java 工程师</div>
+                        </div>
+                        <div class="extra-info">
+                            <div class="home-text-2">上海</div>
+                            <div class="home-text mt5">¥12~24k × 12月</div>
+                        </div>
+                        <a href="/companies/12536943" target="_blank">
+                            <div class="company-logo">
+                                <div class="benchmark"></div>
+                                <img alt="49ccfc0fb4384804b9c204f383b95055 120x120" src="//offer-cp-logo.b0.upaiyun.com/p/logo/49ccfc0fb4384804b9c204f383b95055-120x120"
+                                />
+                            </div>
+                        </a>
+                    </div>
+                    <div class="position-block">
+                        <div class="position-info">
+                            <div class="home-text job-post">大数据架构高级工程师</div>
+                        </div>
+                        <div class="extra-info">
+                            <div class="home-text-2">上海</div>
+                            <div class="home-text mt5">¥30~60k × 12月</div>
+                        </div>
+                        <a href="/companies/18651084" target="_blank">
+                            <div class="company-logo">
+                                <div class="benchmark"></div>
+                                <img alt="4ec4edba43ab41c38428dd2b429246e81524119166 120x120" src="//offer-cp-logo.b0.upaiyun.com/p/logo/4ec4edba43ab41c38428dd2b429246e81524119166-120x120"
+                                />
+                            </div>
+                        </a>
+                    </div>
+                    <div class="position-block">
+                        <div class="position-info">
+                            <div class="home-text job-post">风险策略总监</div>
+                        </div>
+                        <div class="extra-info">
+                            <div class="home-text-2">北京</div>
+                            <div class="home-text mt5">¥20~30k × 12月</div>
+                        </div>
+                        <a href="/companies/62860420" target="_blank">
+                            <div class="company-logo">
+                                <div class="benchmark"></div>
+                                <img alt="38d6fce9a40a4a5d812ca6bf4e17051e1525695701 120x120" src="//offer-cp-logo.b0.upaiyun.com/p/logo/38d6fce9a40a4a5d812ca6bf4e17051e1525695701-120x120"
+                                />
+                            </div>
+                        </a>
+                    </div>
+                    <div class="position-block">
+                        <div class="position-info">
+                            <div class="home-text job-post">信息流经理\高级经理</div>
+                        </div>
+                        <div class="extra-info">
+                            <div class="home-text-2">北京</div>
+                            <div class="home-text mt5">¥20~40k × 14月</div>
+                        </div>
+                        <a href="/companies/18328620" target="_blank">
+                            <div class="company-logo">
+                                <div class="benchmark"></div>
+                                <img alt="6dc6a1c6febf4a9bba7e3b429b73f4e41525336452 120x120" src="//offer-cp-logo.b0.upaiyun.com/p/logo/6dc6a1c6febf4a9bba7e3b429b73f4e41525336452-120x120"
+                                />
+                            </div>
+                        </a>
+                    </div>
+                    <div class="position-block">
+                        <div class="position-info">
+                            <div class="home-text job-post">产品运营</div>
+                        </div>
+                        <div class="extra-info">
+                            <div class="home-text-2">北京</div>
+                            <div class="home-text mt5">¥15~25k × 15月</div>
+                        </div>
+                        <a href="/companies/76181512" target="_blank">
+                            <div class="company-logo">
+                                <div class="benchmark"></div>
+                                <img alt="20397 2017 09 24 kiyenwfc9cfwv676 120x120" src="//offer-cp-logo.b0.upaiyun.com/p/logo/20397_2017_09_24_kiyenwfc9cfwv676-120x120"
+                                />
+                            </div>
+                        </a>
+                    </div>
+                    <div class="position-block">
+                        <div class="position-info">
+                            <div class="home-text job-post">技术研发副总裁VP of Engineering</div>
+                        </div>
+                        <div class="extra-info">
+                            <div class="home-text-2">深圳</div>
+                            <div class="home-text mt5">¥50~51k × 12月</div>
+                        </div>
+                        <a href="/companies/53514518" target="_blank">
+                            <div class="company-logo">
+                                <div class="benchmark"></div>
+                                <img alt="7715 2018 02 24 qkxf7nn57twbyc19 120x120" src="//offer-cp-logo.b0.upaiyun.com/p/logo/7715_2018_02_24_qkxf7nn57twbyc19-120x120"
+                                />
+                            </div>
+                        </a>
+                    </div>
+                    <div class="more-story home-text">
+                        <a href="/job_positions" target="_blank">注册后查看更多数据类职位
+                            <i class='flaticon flaticon-right'></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="positions pm-positions hidden">
+                    <div class="position-block">
+                        <div class="position-info">
+                            <div class="home-text job-post">产品经理</div>
+                        </div>
+                        <div class="extra-info">
+                            <div class="home-text-2">上海</div>
+                            <div class="home-text mt5">¥35~50k × 12月</div>
+                        </div>
+                        <a href="/companies/17278500" target="_blank">
+                            <div class="company-logo">
+                                <div class="benchmark"></div>
+                                <img alt="20240 2018 03 09 8109dyksx7wk4uns 120x120" src="//offer-cp-logo.b0.upaiyun.com/p/logo/20240_2018_03_09_8109dyksx7wk4uns-120x120"
+                                />
+                            </div>
+                        </a>
+                    </div>
+                    <div class="position-block">
+                        <div class="position-info">
+                            <div class="home-text job-post">高级产品经理</div>
+                        </div>
+                        <div class="extra-info">
+                            <div class="home-text-2">北京</div>
+                            <div class="home-text mt5">¥18~36k × 14月</div>
+                        </div>
+                        <a href="/companies/18328620" target="_blank">
+                            <div class="company-logo">
+                                <div class="benchmark"></div>
+                                <img alt="6dc6a1c6febf4a9bba7e3b429b73f4e41525336452 120x120" src="//offer-cp-logo.b0.upaiyun.com/p/logo/6dc6a1c6febf4a9bba7e3b429b73f4e41525336452-120x120"
+                                />
+                            </div>
+                        </a>
+                    </div>
+                    <div class="position-block">
+                        <div class="position-info">
+                            <div class="home-text job-post">产品经理</div>
+                        </div>
+                        <div class="extra-info">
+                            <div class="home-text-2">深圳</div>
+                            <div class="home-text mt5">¥10~20k × 12月</div>
+                        </div>
+                        <a href="/companies/33897714" target="_blank">
+                            <div class="company-logo">
+                                <div class="benchmark"></div>
+                                <img alt="19466 2017 06 16 hajeu6hscd97lehh 120x120" src="//offer-cp-logo.b0.upaiyun.com/p/logo/19466_2017_06_16_hajeu6hscd97lehh-120x120"
+                                />
+                            </div>
+                        </a>
+                    </div>
+                    <div class="position-block">
+                        <div class="position-info">
+                            <div class="home-text job-post">商务经理</div>
+                        </div>
+                        <div class="extra-info">
+                            <div class="home-text-2">杭州</div>
+                            <div class="home-text mt5">¥7~14k × 12月</div>
+                        </div>
+                        <a href="/companies/70437814" target="_blank">
+                            <div class="company-logo">
+                                <div class="benchmark"></div>
+                                <img alt="6bd6c0f774bd486583944e509aa3875a 120x120" src="//offer-cp-logo.b0.upaiyun.com/p/logo/6bd6c0f774bd486583944e509aa3875a-120x120"
+                                />
+                            </div>
+                        </a>
+                    </div>
+                    <div class="position-block">
+                        <div class="position-info">
+                            <div class="home-text job-post">产品经理</div>
+                        </div>
+                        <div class="extra-info">
+                            <div class="home-text-2">北京</div>
+                            <div class="home-text mt5">¥15~30k × 13月</div>
+                        </div>
+                        <a href="/companies/15742973" target="_blank">
+                            <div class="company-logo">
+                                <div class="benchmark"></div>
+                                <img alt="7297 2015 06 09 23 36 10 120x120" src="//offer-cp-logo.b0.upaiyun.com/p/logo/7297_2015_06_09_23_36_10-120x120"
+                                />
+                            </div>
+                        </a>
+                    </div>
+                    <div class="position-block">
+                        <div class="position-info">
+                            <div class="home-text job-post">英语课程产品研发经理</div>
+                        </div>
+                        <div class="extra-info">
+                            <div class="home-text-2">上海</div>
+                            <div class="home-text mt5">¥15~25k × 12月</div>
+                        </div>
+                        <a href="/companies/62317959" target="_blank">
+                            <div class="company-logo">
+                                <div class="benchmark"></div>
+                                <img alt="17513 2018 04 20 ko9hdbslqs4mf87b 120x120" src="//offer-cp-logo.b0.upaiyun.com/p/logo/17513_2018_04_20_ko9hdbslqs4mf87b-120x120"
+                                />
+                            </div>
+                        </a>
+                    </div>
+                    <div class="more-story home-text">
+                        <a href="/job_positions" target="_blank">注册后查看更多产品类职位
+                            <i class='flaticon flaticon-right'></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="positions designer-positions hidden">
+                    <div class="position-block">
+                        <div class="position-info">
+                            <div class="home-text job-post">设计总监</div>
+                        </div>
+                        <div class="extra-info">
+                            <div class="home-text-2">上海</div>
+                            <div class="home-text mt5">¥20~30k × 14月</div>
+                        </div>
+                        <a href="/companies/40132602" target="_blank">
+                            <div class="company-logo">
+                                <div class="benchmark"></div>
+                                <img alt="4922 2017 03 20 m84i4a6fzshoslmr 120x120" src="//offer-cp-logo.b0.upaiyun.com/p/logo/4922_2017_03_20_m84i4a6fzshoslmr-120x120"
+                                />
+                            </div>
+                        </a>
+                    </div>
+                    <div class="position-block">
+                        <div class="position-info">
+                            <div class="home-text job-post">平面设计师</div>
+                        </div>
+                        <div class="extra-info">
+                            <div class="home-text-2">上海</div>
+                            <div class="home-text mt5">¥10~15k × 12月</div>
+                        </div>
+                        <a href="/companies/62317959" target="_blank">
+                            <div class="company-logo">
+                                <div class="benchmark"></div>
+                                <img alt="17513 2018 04 20 ko9hdbslqs4mf87b 120x120" src="//offer-cp-logo.b0.upaiyun.com/p/logo/17513_2018_04_20_ko9hdbslqs4mf87b-120x120"
+                                />
+                            </div>
+                        </a>
+                    </div>
+                    <div class="position-block">
+                        <div class="position-info">
+                            <div class="home-text job-post">高级交互设计师</div>
+                        </div>
+                        <div class="extra-info">
+                            <div class="home-text-2">北京</div>
+                            <div class="home-text mt5">¥16~28k × 14月</div>
+                        </div>
+                        <a href="/companies/18328620" target="_blank">
+                            <div class="company-logo">
+                                <div class="benchmark"></div>
+                                <img alt="6dc6a1c6febf4a9bba7e3b429b73f4e41525336452 120x120" src="//offer-cp-logo.b0.upaiyun.com/p/logo/6dc6a1c6febf4a9bba7e3b429b73f4e41525336452-120x120"
+                                />
+                            </div>
+                        </a>
+                    </div>
+                    <div class="position-block">
+                        <div class="position-info">
+                            <div class="home-text job-post">资深UI设计师(动效或插画方向)</div>
+                        </div>
+                        <div class="extra-info">
+                            <div class="home-text-2">上海</div>
+                            <div class="home-text mt5">¥15~25k × 12月</div>
+                        </div>
+                        <a href="/companies/89928510" target="_blank">
+                            <div class="company-logo">
+                                <div class="benchmark"></div>
+                                <img alt="21375 2018 05 14 cwok13dcvgqdnuo7 120x120" src="//offer-cp-logo.b0.upaiyun.com/p/logo/21375_2018_05_14_cwok13dcvgqdnuo7-120x120"
+                                />
+                            </div>
+                        </a>
+                    </div>
+                    <div class="position-block">
+                        <div class="position-info">
+                            <div class="home-text job-post">UI设计师</div>
+                        </div>
+                        <div class="extra-info">
+                            <div class="home-text-2">新加坡</div>
+                            <div class="home-text mt5">¥15~25k × 14月</div>
+                        </div>
+                        <a href="/companies/96001190" target="_blank">
+                            <div class="company-logo">
+                                <div class="benchmark"></div>
+                                <img alt="12519 2017 11 15 1efslxzo9i283cix 120x120" src="//offer-cp-logo.b0.upaiyun.com/p/logo/12519_2017_11_15_1efslxzo9i283cix-120x120"
+                                />
+                            </div>
+                        </a>
+                    </div>
+                    <div class="position-block">
+                        <div class="position-info">
+                            <div class="home-text job-post">产品设计师</div>
+                        </div>
+                        <div class="extra-info">
+                            <div class="home-text-2">北京</div>
+                            <div class="home-text mt5">¥15~30k × 12月</div>
+                        </div>
+                        <a href="/companies/57872550" target="_blank">
+                            <div class="company-logo">
+                                <div class="benchmark"></div>
+                                <img alt="5975 2016 06 27 4tzp72gd9pvxjbfw 120x120" src="//offer-cp-logo.b0.upaiyun.com/p/logo/5975_2016_06_27_4tzp72gd9pvxjbfw-120x120"
+                                />
+                            </div>
+                        </a>
+                    </div>
+                    <div class="more-story home-text">
+                        <a href="/job_positions" target="_blank">注册后查看更多设计类职位
+                            <i class='flaticon flaticon-right'></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="user-stories-container">
+
+        </div>
+        <div class="resources-container">
+
+        </div>
+        <div class="footer-container">
+
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>导航菜单</title>
+    <!-- 垂直菜单改为水平菜单：ul的width去掉,li进行float:left；a标签的文本缩进改为文本居中： text-align:center;  -->
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+        }
+
+        a {
+            color: #333;
+            text-decoration: none
+        }
+
+        .nav {
+            list-style: none;
+            height: 30px;
+            border-bottom: 10px solid #F60;
+            margin-top: 20px;
+            padding-left: 50px;
+        }
+
+        .nav li {
+            float: left
+        }
+
+        .nav li a {
+            display: block;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            width: 80px;
+            background: #efefef;
+            margin-left: 1px;
+        }
+
+        .nav li a.on,
+        .nav li a:hover {
+            background: #F60;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nav">
+        <li>
+            <a class="on" href="#">首　　页</a>
+        </li>
+        <li>
+            <a href="#">关于我们</a>
+        </li>
+        <li>
+            <a href="#">产品展示</a>
+        </li>
+        <li>
+            <a href="#">售后服务</a>
+        </li>
+        <li>
+            <a href="#">联系我们</a>
+        </li>
+    </ul>
+</body>
+<!-- 导航条菜单制作总结
+        1、用无序列表构建菜单；ul/li
+        2、垂直菜单转变为水平菜单：float:left；
+        3、在制作圆角菜单时，背景图片贴在<a>标签上；  雪碧图的应用--- background-position
+        4、在制作改变高度的伸缩菜单时，实现高度向上延伸的技巧： margin-top用负值；margin-top:-10px；可以使高度变大的块上移，与其他块处于一个平面
+        5、用JS制作水平伸缩菜单时，“this”代表当前的<a>标签。
+        6、line-height:40px；改变文字高度来满足其垂直居中
+        7、背景图片的偏移：background-position:0 -30px;
+        对于Y来说：-是向上移，+是向下移， 
+        对于X来说：-是向左移，+是向右移 -->
+
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>折叠面板</title>
+    <style>
+        body {
+            background-color: rgb(201, 199, 199);
+        }
+
+        /* 每一个item */
+
+        .collapse .item {
+            background-color: #666;
+            border-bottom: 1px solid white;
+            width: 80px;
+        }
+
+        /* p标签 */
+
+        .collapse .item p {
+            position: relative;
+            margin: 0;
+            height: 40px;
+            line-height: 40px;
+            text-indent: 40px;
+            font-size: 20px;
+            color: white;
+            transition: all .5s;
+        }
+
+        /* 鼠标移动上以后变颜色，变小手 */
+
+        .collapse .item p:hover {
+            background: rgb(78, 78, 78);
+            cursor: pointer;
+        }
+
+        /* p标签点击以后 */
+
+        .collapse .item p::after {
+            /* 为什么？ */
+            content: '';
+            width: 0;
+            height: 0;
+
+            position: absolute;
+            top: 15px;
+            left:5px;
+
+            border-color: white transparent transparent transparent;
+            border-width: 10px;
+            border-style: solid;
+
+        }
+
+        /* p标签隐藏以后 */
+
+        .collapse p.hide::after {
+            border-color: transparent  transparent transparent #fff;
+            top: 10px;
+            left:10px;
+        }
+
+        /* 内容 */
+
+        .collapse .item .content {
+            padding: 10px;
+            background-color: rgba(194, 193, 193, 0.685);
+        }
+
+        /* 内容隐藏 */
+
+        .collapse .content.hide {
+            display: none;
+        }
+    </style>
+    <script src="../lib/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+    <div class="collapse">
+        <div class="item">
+            <p>1</p>
+            <div class="content">
+                你好呀
+            </div>
+        </div>
+        <div class="item">
+            <p>2</p>
+            <div class="content">
+                你好呀
+            </div>
+        </div>
+        <div class="item">
+            <p>3</p>
+            <div class="content">
+                你好呀
+            </div>
+        </div>
+    </div>
+    <script>
+        // 折叠面板
+        (function () {
+            var titles = document.querySelectorAll('.collapse p'),
+                items = document.querySelectorAll('.collapse .item');
+
+            function foldAll() {
+                for (var i = 0; i < titles.length; i++) {
+                    items[i].querySelector('.content').className = 'content hide';
+                    titles[i].className = 'hide';
+                }
+            }
+
+            function openPanel(panel) {
+                var targetClass = panel.className == 'hide' ? '' : 'hide';
+                foldAll();
+                panel.parentNode.querySelector('.content').className = 'content ' + targetClass;
+                panel.className = targetClass;
+            }
+
+            for (var i = 0; i < titles.length; i++) {
+                titles[i].addEventListener('click', function () {
+                    openPanel(this);
+                });
+            }
+
+            foldAll();
+
+        })();
+    </script>
+</body>
+
+</html>

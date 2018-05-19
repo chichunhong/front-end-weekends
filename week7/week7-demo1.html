@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动画练习</title>
+    <style>
+        body {
+            background-color: rgb(83, 114, 114);
+        }
+
+        .weixin {
+            position: relative;
+            height: 200px;
+        }
+
+        .weixin .weixin-box img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .weixin .weixin-box .weixin-mask {
+            animation-name: weixin;
+            animation-duration: 3s;
+            animation-timing-function: linear;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+            animation-play-state: running;
+        }
+
+        @keyframes weixin {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            50.1% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .keyframes {
+            background-color: white;
+            height: 300px;
+        }
+
+        .keyframes path {
+            stroke-dasharray: 1000%;
+            stroke-dashoffset: 1000%;
+            stroke-width: 5;
+
+            animation: dash 8s linear infinite;
+        }
+
+        @keyframes dash {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        .rotate img:nth-child(1) {
+            transform: rotate(0deg);
+        }
+
+        .rotate img:nth-child(2) {
+            transform: rotate(10deg);
+        }
+
+        .rotate img:nth-child(3) {
+            transform: rotate(60deg);
+        }
+
+        .rotate img:nth-child(4) {
+            transform: rotate(70deg);
+        }
+
+        .rotate img:nth-child(5) {
+            transform: rotate(-10deg);
+        }
+
+        .rotate-animation img {
+            animation: phone 1.5s linear infinite;
+        }
+
+        @keyframes phone {
+            0% {
+                transform: rotate(0deg);
+            }
+            2% {
+                transform: rotate(-10deg);
+            }
+            5% {
+                transform: rotate(10deg);
+            }
+            8% {
+                transform: rotate(-10deg);
+            }
+            11% {
+                transform: rotate(10deg);
+            }
+            14% {
+                transform: rotate(-10deg);
+            }
+            17% {
+                transform: rotate(10deg);
+            }
+            20% {
+                transform: rotate(0deg);
+            }
+        }
+
+        .combination-1 {
+            background-color: aquamarine;
+            width: 100%;
+            height: 100px;
+            position: relative;
+        }
+
+        .combination-1 .email-bg {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .combination-1 .email-inner {
+            position: absolute;
+            top: 60px;
+            left: 40px;
+
+            overflow: hidden;
+            height: 0px;
+        }
+
+        .combination-1 .email-top {
+            position: absolute;
+            transform: rotate(180deg);
+            top: 17px;
+            left: 22px;
+        }
+
+        .combination-1 .email-bottom {
+            position: absolute;
+            top: 45px;
+            left: 22px;
+        }
+
+        .combination-2 {
+            background-color: aquamarine;
+            width: 100%;
+            height: 100px;
+            position: relative;
+        }
+
+        .combination-2 .email-bg {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .combination-2 .email-inner {
+            position: absolute;
+            top: 30px;
+            left: 40px;
+        }
+
+        .combination-2 .email-top {
+            position: absolute;
+            top: -9px;
+            left: 22px;
+        }
+
+        .combination-2 .email-bottom {
+            position: absolute;
+            top: 45px;
+            left: 22px;
+        }
+
+        .combination {
+            background-color: aquamarine;
+            width: 100%;
+            height: 100px;
+            position: relative;
+        }
+
+        .combination .email-bg {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .combination .email-inner {
+            position: absolute;
+            top: 60px;
+            left: 40px;
+
+            overflow: hidden;
+            height: 0px;
+            animation: emailinner 3s linear infinite;
+        }
+
+        @keyframes emailinner {
+            0% {
+                top: 60px;
+                height: 0;
+            }
+
+            25% {
+                top: 60px;
+                height: 0;
+            }
+
+            40% {
+                top: 28px;
+                height: 32px;
+            }
+
+            60% {
+                top: 28px;
+                height: 32px;
+            }
+
+            80% {
+                top: 60px;
+                height: 0;
+            }
+
+            100% {
+                top: 60px;
+                height: 0;
+            }
+        }
+
+
+        .combination .email-top {
+            position: absolute;
+            transform: rotate(180deg);
+            top: 17px;
+            left: 22px;
+        }
+
+        .combination .email-bottom {
+            position: absolute;
+            top: 45px;
+            left: 22px;
+        }
+
+        .combination .email-top img {
+            transform-origin: 50% 100%;
+            animation: openemail 3s linear infinite;
+        }
+
+        @keyframes openemail {
+            0% {
+                transform: rotateX(0deg);
+            }
+
+            15% {
+                transform: rotateX(0deg);
+            }
+
+            35% {
+                transform: rotateX(180deg);
+            }
+
+            65% {
+                transform: rotateX(180deg);
+            }
+
+            85% {
+                transform: rotateX(0deg);
+            }
+
+            100% {
+                transform: rotateX(0deg);
+            }
+        }
+
+        .shade {
+            background-image: url("../images/onepiece.jpg");
+            -webkit-mask-image: url("../images/mask.png");
+            height: 260px;
+        }
+
+        .gradual-1 .item {
+            height: 100px;
+            width: 100px;
+            display: inline-block;
+        }
+
+        .gradual-1 div.item:nth-child(1) {
+            background: -webkit-linear-gradient(yellow, green);
+        }
+
+        .gradual-1 div.item:nth-child(2) {
+            background: -webkit-linear-gradient(180deg, yellow, green);
+        }
+
+        .gradual-2 {
+            height: 300px;
+            background-image: url("../images/onepiece.jpg");
+            -webkit-mask-image: -webkit-linear-gradient(left, transparent, white);
+        }
+
+        .gradual {
+            height: 300px;
+            background-image: url("../images/onepiece.jpg");
+            -webkit-mask-image: -webkit-linear-gradient(left, transparent, white);
+            -webkit-mask-size: 100px 100%;
+            -webkit-mask-repeat: no-repeat;
+            animation: heartbeat 5s linear infinite;
+        }
+
+        @keyframes heartbeat {
+            from {
+                -webkit-mask-position: -10% 0;
+                /*起始位置？ */
+            }
+            to {
+                -webkit-mask-position: 110% 0;
+            }
+        }
+
+        .fluorescent {
+            position: relative;
+        }
+
+        .fluorescent .bg-shadow {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 163px;
+            height: 180px;
+            border-radius: 50%;
+
+            /* 防止遮盖图片 */
+            z-index: -1;
+            animation: shadow 0.5s linear 1s infinite alternate;
+        }
+
+        @keyframes shadow {
+            from {
+                box-shadow: 0 0 10px white;
+
+                /* box-shadow:h-shadow v-shadow blur spread color inset;
+                h-shadow
+                必需。水平阴影的位置。允许负值。
+                v-shadow
+                必需。垂直阴影的位置。允许负值。
+                blur
+                可选。模糊距离。
+                spread
+                可选。阴影的尺寸。
+                color
+                可选。阴影的颜色。请参阅 CSS 颜色值。
+                inset
+                可选。将外部阴影 (outset) 改为内部阴影。*/
+                opacity: 0.07;
+            }
+
+            to {
+                box-shadow: 0 0 150px white;
+                opacity: 1;
+            }
+        }
+
+        .path {
+            width: 300px;
+            height: 300px;
+            background: orange;
+            border-radius: 50%;
+            /* 这里为什么？ */
+            text-align: center; 
+        }
+
+        .path .avatar {
+            animation: spin 5s infinite linear;
+            transform-origin: 50% 150px;
+            /* 定义圆心：transform-origin 属性允许您改变被转换元素的位置
+            transform-origin: x-axis y-axis z-axis;
+            x-axis:定义视图被置于 X 轴的何处。可能的值：left,center,right,length,%
+            y-axis:定义视图被置于 Y 轴的何处。
+            z-axis:定义视图被置于 Z 轴的何处 */
+            /* 150px = path radius */
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(1turn);
+                /* 旋转一周 */
+            }
+        }
+
+        .path .avatar>img {
+            width: 30px;
+            animation: infinite;
+            animation-direction: reverse;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h3>透明度动画</h3>
+    <div class="weixin">
+        <div class="weixin-box">
+            <img src="../images/week7/weixin_2.svg">
+            <img class="weixin-mask" src="../images/week7//weixin_1.svg">
+        </div>
+    </div>
+    <div class="keyframes">
+        <h3>svg路径描边动画</h3>
+        <svg width="580" height="400" xmlns="http://www.w3.org/2000/svg">
+            <path d="m140,88c1,0 2,0 4,0c1,0 4,0 8,0c4,0 6,0 9,0c4,0 6.907791,-0.496223 11,-1c3.970032,-0.488731 6.878555,-0.493462 10,-1c3.948349,-0.640732 7,0 10,0c2,0 4,0 8,0c2,0 4,0 6,0c2,0 3,0 5,0c1,0 2,0 3,0c1,0 2.61731,-0.923882 3,0c0.541199,1.306564 -1.310013,0.337494 -4,2c-1.203003,0.7435 -3,3 -5,4c-4,2 -6.06601,3.877655 -8,5c-3.118484,1.809723 -5.310013,2.337494 -8,4c-1.203003,0.7435 -13.539764,5.468727 -21,7c-6.85704,1.407463 -11.053497,1.540497 -13,2c-2.176254,0.513741 -4,2 -6,2c0,0 -2,-1 -2,0c0,1 1.823746,-0.486259 4,-1c1.946503,-0.459503 3,-1 6,-1c2,0 3.823746,-1.486259 6,-2c1.946503,-0.459503 6.002914,0.076248 7,0c13.114655,-1.002922 23,-3 30,-3c5,0 9,0 12,0c2,0 4,0 5,0c1,0 2.38269,0.076118 2,1c-0.541199,1.306564 -2,2 -3,3c-2,2 -3.812653,3.20681 -6,5c-2.78833,2.285881 -5.186005,4.692551 -7,6c-3.441803,2.480713 -20.313873,6.031113 -34,11c-9.257599,3.361069 -16.936951,6.196228 -26,9c-6.954895,2.151596 -15.034424,3.867004 -23,6c-7.032349,1.883102 -15.168777,4.17395 -22,6c-5.202499,1.390671 -11.289124,2.048691 -16,4c-3.331093,1.379791 -6.851952,5.771637 -8,3c-0.541199,-1.306564 3.152245,-2.234634 5,-3c2.613129,-1.082397 5.906326,-4.103409 7,-5c2.788322,-2.285873 22.953583,-5.242233 38,-8c11.966202,-2.193207 23.77179,-4.018265 35,-6c11.858307,-2.092941 23.987732,-3.075027 36,-5c12.987244,-2.081207 24.99559,-4.045052 35,-5c10.995377,-1.049538 21,-3 31,-3c7,0 13.071808,0.308754 18,-1c3.056335,-0.811653 6,-1 7,-1c1,0 2.38269,-1.076118 2,-2c-0.541199,-1.306564 -2.474274,-2.149345 -3,-3c-1.175568,-1.902115 -2.434631,-3.150986 -5,-5c-1.622498,-1.169418 -3,-2 -5,-4c-2,-2 -3.043243,-2.893021 -18,-9c-12.0354,-4.914162 -20.14183,-6.761421 -27,-11c-6.134125,-3.7911 -11.693436,-7.458801 -13,-8c-0.923874,-0.382683 -3,-2 -4,-3c-1,-1 -0.693436,-1.458801 -2,-2c-0.923874,-0.382683 -1,-1 -2,-3c0,0 0,-2 0,-3c0,-1 -1,-1 -1,-2c0,-1 -1.292892,-1.707108 -2,-1c-0.707108,0.707108 0.07193,2.611046 -2,5c-1.465073,1.689247 -3.103409,3.906326 -4,5c-2.285873,2.788322 -3.811447,5.134644 -6,8c-1.919479,2.513084 -3.337494,5.310005 -5,8c-2.230484,3.609009 -4.112137,3.918304 -7,8c-2.082474,2.943352 -5.541077,4.576874 -7,7c-7.015732,11.652451 -9.344574,20.742828 -13,26c-3.328781,4.787399 -6.519287,9.558197 -9,13c-1.307449,1.813995 -3.613831,3.296997 -6,6c-2.959671,3.352661 -5.692551,6.186005 -7,8c-2.480713,3.441803 -6.692551,6.186005 -8,8c-2.480713,3.441803 -5.679794,5.358734 -9,8c-7.382835,5.873138 -13.161194,7.746399 -18,11c-4.149239,2.789948 -8.076889,4.731445 -12,6c-5.123947,1.656845 -8,3 -12,5c-2,1 -3.878555,2.493454 -7,3c-0.987091,0.160187 -3,0 -4,0c-1,0 -2,2 -1,2c1,0 0,-2 0,-3c0,-1 -0.459503,-2.053497 0,-4c0.513741,-2.176254 2.692551,-4.186005 4,-6c2.480713,-3.441803 5.134644,-6.811447 8,-9c2.513084,-1.919479 4.442581,-5.688126 8,-8c11.678848,-7.589767 21.266014,-9.36882 29,-13c7.297913,-3.426437 13.650818,-7.679153 19,-10c6.678604,-2.897644 13.74707,-4.61702 18,-6c5.784607,-1.881058 9.925797,-3.497559 15,-4c2.985397,-0.295609 7,0 9,0c2,0 4.823746,-1.486252 7,-2c2.919754,-0.689255 3,0 4,0c2,0 3,0 4,0c1,0 2,0 3,0c0,0 1,0 3,0c1,0 0.292892,1.292892 1,2c0.707108,0.707108 3.292892,-0.707108 4,0c0.707108,0.707108 1.693436,2.458801 3,3c0.923874,0.38269 1.693436,0.458801 3,1c0.923874,0.38269 2,1 4,2c2,1 3.298691,0.948532 5,2c1.902115,1.175568 2.823746,3.486252 5,4c0.973251,0.229752 2.31076,1.534927 4,3c2.388962,2.07193 3.881516,1.190277 7,3c1.93399,1.122345 5,2 7,3c2,1 5.012909,1.839813 6,2c3.121445,0.506546 5.080261,0.310745 8,1c2.176239,0.513748 3.878571,2.493454 7,3c1.974182,0.320358 4,0 5,0c1,0 -1.014587,0.295609 -4,0c-5.074219,-0.502441 -10.98877,-2.069824 -17,-3c-6.9879,-1.081314 -14.958466,-3.499237 -24,-4c-7.987762,-0.442398 -16.929871,-0.346863 -26,-2c-6.956467,-1.267899 -13.022064,-1.837051 -21,-3c-6.01915,-0.877426 -9.925797,-2.497559 -15,-3c-2.985397,-0.295609 -6,0 -8,0c-1,0 -1,-1 -1,-1c0,1 0,1 0,2c0,1 -0.61731,2.076126 -1,3c-0.541199,1.306564 -2,2 -2,4c0,0 0,1 0,2c0,2 0,3 0,5c0,1 -0.679642,3.025818 -1,5c-0.506546,3.121445 -1,5 -1,8c0,2 -0.540497,4.053497 -1,6c-0.513748,2.176254 -1.839813,5.012909 -2,6c-0.506546,3.121445 -1.540497,6.053497 -2,8c-0.513748,2.176254 -1,4 -1,7c0,3 -0.486252,4.823746 -1,7c-0.459503,1.946503 0,2 0,4c0,1 -1,2 -1,3c0,1 0,0 0,-1c0,-1 0,-3 0,-5c0,-2 0,-4 0,-7c0,-2 0,-4 0,-6c0,-9 0,-15 0,-21c0,-4 1,-9 1,-14c0,-4 1.569504,-9.132996 3,-13c0.775803,-2.097168 1.679642,-5.025818 2,-7c0.506546,-3.121445 2.458801,-5.693436 3,-7c0.38269,-0.923874 0,-2 0,-4c0,0 -0.902115,-1.824432 1,-3c0.850647,-0.525726 2,0 3,0c1,0 3,0 4,0c3,0 4,0 7,0c2,0 5,0 6,0c3,0 5,0 7,0c2,0 4,0 7,0c1,0 4,0 6,0c2,0 3.292892,-0.707108 4,0c1.414215,1.414215 0,3 0,4c0,1 0,2 0,3c0,1 0,3 0,4c0,2 0,4 0,6c0,2 0,3 0,6c0,1 0,4 0,6c0,2 0,4 0,6c0,3 0,5 0,7c0,2 1,5 1,7c0,2 1.486252,4.823746 2,7c0.689255,2.919754 0,4 0,7c0,2 1,4 2,6c1,2 1.458801,4.693436 2,6c1.530731,3.695511 0,6 0,8c0,0 -1.176254,3.513748 1,3c0.973251,-0.229752 0.414215,-1.585785 -1,-3c-1.414215,-1.414215 -2.824432,-1.097885 -4,-3c-0.525726,-0.850647 0,-1 -2,-3c-3,-3 -4.852737,-5.173096 -6,-6c-1.813995,-1.307449 -4.152237,-3.234634 -6,-4c-1.306564,-0.541199 -2.611038,-1.92807 -5,-4c-1.68924,-1.465073 -3.076126,-3.61731 -4,-4c-1.306564,-0.541199 -1,-2 -2,-3c-1,-1 -1.486252,-0.823746 -2,-3c-0.229752,-0.973251 0,-2 0,-2c0,-1 0,-2 0,-4c0,0 0,-1 0,-2c0,-1 1,-2 2,-2c1,0 3,0 5,0c1,0 3,0 4,0c0,0 1,0 2,0c1,0 2,0 2,0c0,3 0,4 0,6c0,2 0.579575,3.085815 0,5c-1.04483,3.450851 -4.206802,4.812653 -6,7c-2.285873,2.78833 -4.812653,6.206802 -7,8c-2.78833,2.285873 -5.134644,6.811447 -8,9c-2.513077,1.919479 -5.152237,4.234634 -7,5c-2.613129,1.082397 -3.292892,3.292892 -4,4c-0.707108,0.707108 0.693436,0.541199 2,0c1.847763,-0.765366 5,-1 7,-2c2,-1 4,-2 7,-3c3,-1 4.07843,-0.789856 7,-2c2.065857,-0.855713 4,-1 5,-1c0,0 1.152237,0.765366 3,0c1.306564,-0.541199 1.852737,-2.173096 3,-3c1.813995,-1.307449 2.881516,-3.190277 6,-5c1.93399,-1.122345 4,-4 8,-8c2,-2 3.596161,-4.467438 7,-7c11.845718,-8.813568 25.065277,-13.903778 31,-18c7.079697,-4.88649 13.771729,-10.3853 22,-15c7.801147,-4.375153 15.114075,-8.779572 23,-13c7.108276,-3.804245 13.78302,-9.406204 21,-13c6.817291,-3.394775 12.742828,-8.344566 18,-12c4.787384,-3.328789 9.723999,-6.222733 13,-10c3.70639,-4.273491 7,-6 9,-8c3,-3 4.186005,-4.692551 6,-6c1.147278,-0.826904 2.811249,-2.415291 2,-3c-2.565369,-1.849014 -4.076111,1.617317 -5,2c-3.919678,1.623589 -4.812653,4.20681 -7,6c-2.78833,2.285881 -5.4505,4.450493 -8,7c-2.5495,2.549507 -4.558197,6.519287 -8,9c-1.813995,1.307449 -4.6297,2.624893 -8,5c-2.947235,2.076973 -4.585785,2.585785 -6,4c-0.707092,0.707108 -1,2 -1,3c0,1 1,1 3,1c0,0 0.823761,1.486252 3,2c0.973236,0.229752 1.823761,1.486252 4,2c0.973236,0.229752 2.298706,0.948532 4,2c1.9021,1.175568 2,2 4,4c1,1 1.770233,2.026749 2,3c0.513733,2.176254 2,3 2,4c0,2 0,3 0,5c0,2 0,3 0,5c0,2 0,5 0,6c0,3 0.765381,7.152237 0,9c-1.082397,2.613129 -2.493469,2.878555 -3,6c-0.160187,0.987091 0,3 0,4c0,1 -1,2 -1,3c0,1 0,1 0,2c0,1 0,2 1,3c0,0 0.458801,0.693436 1,2c0.765381,1.847763 2,3 2,4c0,1 1,2 1,3c0,2 0,3 0,3c1,2 2,3 3,4c1,1 0.292908,2.292892 1,3c0.707092,0.707108 1,1 2,1c1,0 2,0 2,-1c0,-2 0.493469,-2.878555 1,-6c0.320374,-1.974182 0,-5 0,-7c0,-2 0,-4 0,-6c0,-3 0,-10 0,-16c0,-4 0,-9 0,-12c0,-4 -1,-8 -2,-10c-1,-2 -0.679626,-4.025818 -1,-6c-0.506531,-3.121445 -2,-4 -2,-5c0,-1 -1,-3 -1,-5c0,-2 0,-3 0,-5c0,-1 0,-3 0,-5c0,-1 1,-2 2,-3c1,-1 2.61731,-1.076118 3,-2c1.082397,-2.613129 3,-2 4,-2c1,0 2,-1 3,-1c1,0 3,0 4,0c1,0 3,0 5,0c1,0 3,0 4,0c3,0 4,0 7,0c2,0 5,0 6,0c3,0 5,0 7,0c2,0 4,1 4,1c1,1 3,2 4,3c0,0 0,2 -1,3c-1,1 -2.292908,0.292892 -3,1c-0.707092,0.707108 0,2 0,3c0,1 0,1 0,3c0,1 -0.459503,2.053497 0,4c0.513733,2.176254 2,4 2,6c0,2 0,4 0,6c0,2 0,4 0,6c0,2 0,4 0,7c0,1 0.486267,4.823746 1,7c0.459503,1.946503 1,4 1,6c0,3 0.493469,3.878555 1,7c0.320374,1.974182 0,5 0,6c0,2 0,4 0,5c0,1 0,2 0,3c0,1 0,2 -1,1c0,0 -1,0 -3,0c-1,0 -1,0 -3,0c-1,0 -2,0 -2,0c-2,0 -3.292908,0.707108 -4,0c-0.707092,-0.707108 1,-1 3,-1c2,0 5,-1 6,-1c3,0 4.823761,-0.486252 7,-1c1.946503,-0.459503 4,0 7,0c2,0 4,0 6,0c3,0 5,0 7,-1c2,-1 4,-1 7,-1c1,0 3,-1 4,-1c1,0 2.152252,0.765366 4,0c1.306549,-0.541199 2,-1 5,-1c1,0 1.823761,-0.486252 4,-1c0.973236,-0.229752 3.292908,0.707108 4,0c0.707092,-0.707108 2,-2 3,-2c1,0 1,0 2,0l1,0l2,0l0,0"
+                stroke-width="1.5" stroke="#000" fill="none" id="svg_4" />
+        </svg>
+    </div>
+    <h3>旋转变形</h3>
+    <div class="rotate">
+        <img src="../images/week7/shake_phone.svg">
+        <img src="../images/week7/shake_phone.svg">
+        <img src="../images/week7/shake_phone.svg">
+        <img src="../images/week7/shake_phone.svg">
+        <img src="../images/week7/shake_phone.svg">
+    </div>
+    <h3>旋转变形动画</h3>
+    <div class="rotate-animation">
+        <img src="../images/week7/shake_phone.svg">
+    </div>
+    <h2>组合动画初始态</h2>
+    <div class="combination-1">
+        <div class="email-bg">
+            <img src="../images/week7/email_bg.svg">
+        </div>
+        <div class="email-inner">
+            <img src="../images/week7/email_inner.svg">
+        </div>
+        <div class="email-top">
+            <img src="../images/week7/email_top.svg">
+        </div>
+        <div class="email-bottom">
+            <img src="../images/week7/email_top.svg">
+        </div>
+    </div>
+    <h3>组合动画最终态</h3>
+    <div class="combination-2">
+        <div class="email-bg">
+            <img src="../images/week7/email_bg.svg">
+        </div>
+        <div class="email-inner">
+            <img src="../images/week7/email_inner.svg">
+        </div>
+        <div class="email-top">
+            <img src="../images/week7/email_top.svg">
+        </div>
+        <div class="email-bottom">
+            <img src="../images/week7/email_top.svg">
+        </div>
+    </div>
+
+    <h3>组合动画</h3>
+    <div class="combination">
+        <div class="email-bg">
+            <img src="../images/week7/email_bg.svg">
+        </div>
+        <div class="email-inner">
+            <img src="../images/week7/email_inner.svg">
+        </div>
+        <div class="email-top">
+            <img src="../images/week7/email_top.svg">
+        </div>
+        <div class="email-bottom">
+            <img src="../images/week7/email_top.svg">
+        </div>
+    </div>
+
+    <h3>遮罩</h3>
+    <div class="shade">
+    </div>
+    <h3>渐变</h3>
+    <div class="gradual-1">
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+    <h2>渐变遮罩</h2>
+    <div class="gradual-2">
+    </div>
+    <h3>渐变遮罩动画</h3>
+    <div class="gradual">
+    </div>
+
+    <h3>荧光动画</h3>
+    <div class="fluorescent">
+        <div class="bg-shadow"></div>
+        <img src="../images/week7/Dtoken.svg">
+    </div>
+
+    <h3>路径动画</h3>
+    <div class="path">
+        <div class="avatar">
+            <img src="../images/week7/Dtoken.svg" />
+        </div>
+    </div>
+
+</body>
+
+</html>
